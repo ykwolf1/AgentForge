@@ -46,12 +46,16 @@ jobs:
           pip install -e ".[dev]" 2>/dev/null || pip install -e .
           pip install pytest pytest-asyncio ruff
 
-      # 第 4 步：跑测试（跳过需要联网的测试）
+      # 第 4 步：跑测试
+      # 跳过需要外部服务（Milvus/Redis/Embedding）的测试——CI 服务器上没有这些
+      # 跳过需要联网的测试（test_agent 调真实 LLM）
       - name: 跑测试
         run: |
           pytest tests/ -q --tb=short \
             --ignore=tests/test_agent.py \
-            --ignore=tests/test_evaluation.py
+            --ignore=tests/test_evaluation.py \
+            --ignore=tests/test_infra.py \
+            --ignore=tests/test_skills_ranker.py
 
       # 第 5 步：代码风格检查
       - name: 代码风格检查（ruff）
