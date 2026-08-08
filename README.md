@@ -1,6 +1,6 @@
 # AgentForge — 生产级多 Agent 系统
 
-> **111 个文件 / 17160 行代码 / 22 个测试文件 / 156 个测试用例全部通过**
+> **121 个 Python 文件 / 18301 行代码 / 22 个测试文件 / 158 个测试用例全部通过 / 52 个审计问题全部修复**
 
 AgentForge 是一个面向工程应用场景的通用 AI Agent 框架，涵盖多智能体协作、任务规划、工具调用、知识库（RAG）、记忆管理等核心能力。它既是一个可用的编码助手，也是一个可扩展的 Agent 运行时平台。
 
@@ -8,7 +8,7 @@ AgentForge 是一个面向工程应用场景的通用 AI Agent 框架，涵盖�
 
 ### Agent 内核
 - **通用 Agent 类**：统一的 while 循环（LLM → 工具 → 回灌 → 再推理），失败回灌不崩溃，max_turns 兜底
-- **后端切换**：通过 LLMClient + adapter 支持 OpenAI（chat）/ Anthropic，不改 agent 代码
+- **统一 LLM 适配**：UnifiedAdapter 一套代码对接所有模型（chat/responses/messages 三协议），DeepSeek/Qwen/Claude/GLM 统一接入
 - **角色化**：coordinator（接输入/分发）+ worker（执行），靠配置的 role/system_prompt/allowed_tools 区分
 - **并行工具执行**：LLM 一次发多个 tool_call 时 asyncio.gather 并发执行
 
@@ -23,7 +23,7 @@ AgentForge 是一个面向工程应用场景的通用 AI Agent 框架，涵盖�
 - **spawn_agent**（动态生成）：LLM 自己决定要什么子 agent，指定 task + tools + instructions，异步执行
 - **并行 delegate**：多个 delegate 后台 asyncio.create_task 并发跑，不阻塞主循环
 - **共享状态**：所有 agent 持有同一 SharedState（history / peers / budget / token_usage）
-- **handoff 深度限制**：上限 3 层，防 A→B→A→B 无限循环
+- **handoff 深度限制**：上限 3 层（可配置），防 A→B→A→B 无限循环
 
 ### 记忆系统（参照腾讯 TencentDB Agent Memory 设计）
 

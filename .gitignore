@@ -52,3 +52,8 @@ evaluation/bfcl/gorilla/
 # 配置文件（含 API key，不传）
 pywen_config.json
 agentforge_config.yaml
+
+# IDE + 缓存
+.idea/
+.pytest_cache/
+.DS_Store
