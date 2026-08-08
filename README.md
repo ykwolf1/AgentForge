@@ -237,7 +237,7 @@ agentforge/
 | 维度 | 能力 |
 |:--|:--|
 | Agent 循环 | while 循环 + 失败回灌 + 并行工具 + max_turns |
-| 后端 | OpenAI chat / Anthropic（adapter 切换） |
+| 后端 | UnifiedAdapter（chat/responses/messages 三协议合一） |
 | 多 Agent | delegate + spawn_agent + 并行 delegate + 共享状态 |
 | 工具 | 21 内置 + MCP(stdio/http/sse) + autodiscover |
 | 安全 | 四道关卡 + DLP + Budget + 验证器 + Reflection |
