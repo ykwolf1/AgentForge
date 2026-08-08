@@ -1,0 +1,20 @@
+[
+  {
+    "task": "用一句话介绍你自己",
+    "expected": "agent",
+    "category": "self_intro",
+    "max_turns": 3
+  },
+  {
+    "task": "计算 2 + 3 等于多少",
+    "expected": "5",
+    "category": "math",
+    "max_turns": 3
+  },
+  {
+    "task": "用 bash 执行 echo hello 并告诉我输出",
+    "expected": "hello",
+    "category": "tool_use",
+    "max_turns": 5
+  }
+]

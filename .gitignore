@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# 虚拟环境（1.6G，不传）
+.venv/
+venv/
+
+# 知识文档（614M PDF，不传——用户自行放置）
+知识文档/
+
+# 运行时数据（含敏感信息/用户数据）
+.env
+*.db
+*.db-wal
+*.db-shm
+
+# 日志和轨迹
+logs/
+trajectories/
+**/logs/
+**/trajectories/
+
+# 运行时缓存
+context_store/
+.memory/*
+sb-cli-reports/
+~/gorilla/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# 临时文件
+tmp/
+*.tmp
+*.bak
+
+# 评估结果
+evaluation/*/results/
+evaluation/swebench/claude_workspace/
+evaluation/swebench/pywen_workspace/
+evaluation/bfcl/gorilla/
+
+# 配置文件（含 API key，不传）
+pywen_config.json
+agentforge_config.yaml
