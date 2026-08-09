@@ -18,8 +18,8 @@ from pathlib import Path
 # 让脚本能 import agentforge
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-# 注入 TAVILY_API_KEY（web_search 工具需要）
-os.environ["TAVILY_API_KEY"] = "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"
+# TAVILY_API_KEY 从环境变量读（不要硬编码到代码里）
+# 设置方式：export TAVILY_API_KEY="你的key"
 
 
 # ===== 验证结果收集器 =====

@@ -25,7 +25,7 @@ class MinIOClient:
         self._enabled = config.get("enabled", False)
         self._endpoint = config.get("endpoint", "localhost:9002")
         self._access_key = config.get("access_key", "admin")
-        self._secret_key = config.get("secret_key", "admin123")
+        self._secret_key = config.get("secret_key", "")
         self._bucket = config.get("bucket", "agentforge")
         self._secure = config.get("secure", False)
         self._client = None

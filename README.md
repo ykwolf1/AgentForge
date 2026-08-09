@@ -165,7 +165,7 @@ infra:
     enabled: true
     endpoint: "localhost:9002"
     access_key: "admin"
-    secret_key: "admin123"
+    secret_key: "your-minio-secret-key"
 ```
 
 ## 📐 架构
